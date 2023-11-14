@@ -1,6 +1,6 @@
 ---
 theme: dracula
-background: assets/ante-hamersmit-qg6MDcCWBfM-unsplash.jpg
+background: /ante-hamersmit-qg6MDcCWBfM-unsplash.jpg
 highlighter: shiki
 lineNumbers: false
 drawings:
