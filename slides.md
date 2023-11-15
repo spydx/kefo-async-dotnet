@@ -54,7 +54,7 @@ class: text-center
 
 <div v-click>
 
-It will under the hood implement `IAsycStateMachine`
+It will under the hood implement `IAsyncStateMachine`
 
 </div>
 
@@ -80,7 +80,7 @@ public static class Program
         var response = await httpClient
             .GetAsync(url);
 
-        var content = response.Content
+        var content = await response.Content
             .ReadAsStringAsync();
 
         Console.WriteLine(content);
@@ -306,13 +306,13 @@ layout: default
 
 | **To Do this**                           | **Instead of This**      | **Use This**       |
 | ---------------------------------------- | ------------------------ | ------------------ |
-| Retrigve the reult of an background task | `Task.Wait` or `Task.Result` | `await`              |
+| Retrive the result of an background task | `Task.Wait` or `Task.Result` | `await`              |
 | Wait for any task to complete            | `Task.WaitAny`             | `await Task.WhenAny` |
 | Retrive the results of multiple tasks    | `Task.WaitAll`             | `await Task.WhenAll` |
 | Wait a period of time                    | `Thread.Sleep`             | `await Task.Delay`   |
 
-- Use `.GetWaiter().GetResult()`
 
+Instead of `.Result` use `.GetWaiter().GetResult()`
 
 ---
 layout: two-cols
